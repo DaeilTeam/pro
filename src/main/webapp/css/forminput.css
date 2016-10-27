@@ -17,13 +17,12 @@
 #inputform input,
 #inputform textarea
 {
-  padding: 10px 15px;
+  padding: 15px 10px;
   background: #DAD9FF;
   color: #484848;
   border: 1px solid #ccc;
-  font-size: 13px;
+  font-size: 20px;
   font-family: Helvetica, Arial;
-  line-height: 1.5em;
   overflow: auto;
 }
 #inputform input:focus,
@@ -43,6 +42,14 @@
   margin-bottom: 10px;
   overflow: hidden;
 }
+
+.inputselect
+{
+	width : 200px;
+	padding : 10px 10px;
+	font-size: 20px;
+	background-color: #D4F4FA;
+}
 #inputform textarea
 {
   width: 93.1818%;
@@ -55,9 +62,9 @@
 {
   width: auto;
   color: #444;
-  font-size: 11px;
+  font-size: 20px;
   background: #eaeaea;
-  padding: 3px 10px;
+  padding: 10px 10px;
   border: 1px solid #ccc;
   -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
@@ -78,19 +85,15 @@
 {
   margin-top: 7px;
 }
-#inputform label
-{
-  display: block;
-}
-#inputform p,
+#inputform p
 {
   margin-bottom: 20px;
 }
-#inputform #error,
+#inputform #error
 {
   margin-left: 10px;
 }
-#inputform #sent-form-msg,
+#inputform #sent-form-msg
 {
   padding: 5px 10px;
   margin-bottom: 40px;
