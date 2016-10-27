@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 <!doctype html> 
 <html class="no-js">
 
@@ -21,12 +24,6 @@
 		
 		<!-- Isotope -->
 		<script src="js/jquery.isotope.min.js"></script>
-		
-		<!-- Lof slider -->
-		<script src="js/jquery.easing.js"></script>
-		<script src="js/lof-slider.js"></script>
-		<link rel="stylesheet" href="css/lof-slider.css" media="all"  /> 
-		<!-- ENDS slider -->
 		
 		<!-- Tweet -->
 		<link rel="stylesheet" href="css/jquery.tweet.css" media="all"  /> 
@@ -79,6 +76,12 @@
 		<!-- reply move form -->
 		<script src="js/moveform.js"></script>
 		
+		<style type="text/css">
+			.a{
+				width: 20px;
+			}
+		</style>
+		
 	</head>
 	
 	
@@ -118,62 +121,81 @@
 			<div class="wrapper cf">
 			
 			
-				
+			
 			<!-- page content-->
         	<div id="page-content" class="cf">        	
-	        		
+	        	
+	        	
 	        	<!-- entry-content -->	
 	        	<div class="entry-content cf">
 	        	
-					<!-- 2 cols -->
-					<div class="one-half">
-						<h4 class="heading">One half columns</h4>
+	        		<div class="one-one last">
+						<h2 class="heading">회원가입</h2>
+						우리 사이트에 회원가입 하실 큰 결심을 하신 것을 환영합니다. 고객님. 회원가입시 다양하지 않은 정보와 아무 의미도 없는 평점 시스템, 별 내용없는 게시판을 즐길 수 있습니다. 회원가입시 고객님의 개인정보는 저희 사이트에 귀속되며, 후일 고객님의 개인정보는 타 음식점의 정보 공제를 위해 팔려나갈 수 있다는 점을 유의해주시길 바랍니다. 가입시 고객님의  핸드폰번호를 이용해 다양한 소액결제가 이루어질 수 있으며, 이에 대해서 본 사이트는 어떠한 책임도 지지않음을 미리 알립니다. 
 					</div>
-					
-					<div class="one-half last">
-						<h4 class="heading">One half columns</h4>
+					<div class="clearfix"><p></p></div>
+					<form action="single.html" method="post" id="commentform">
+					<div class="last">
+						<h5>아이디</h5>
+						<input type="text" id="mid" name="mid" maxlength="10">
+						<p></p>
 					</div>
-					<div class="clearfix"></div>
-					<!-- ENDS 2 cols -->
-					
-					
-					<!-- 3 cols -->
-					<div class="one-third">
-						<h4 class="heading">One third columns</h4>
+					<div class="last">
+						<h5>비밀번호</h5>
+						<input type="password" id="mpw" name="mpw" maxlength="20">
+						<p></p>
 					</div>
-					
-					<div class="one-third">
-						<h4 class="heading">One third columns</h4>
+					<div class="last">
+						<h5>비밀번호 확인</h5>
+						<input type="password" id="rempw" name="rempw" maxlength="20">
+						<p></p>
 					</div>
-					
-					<div class="one-third last">
-						<h4 class="heading">One third columns</h4>
+					<div class="last">
+						<h5>성명</h5>
+						<input type="password" id="mnm" name="mnm" maxlength="5">
+						<p></p>
 					</div>
-					<div class="clearfix"></div>
-					<!-- ENDS 3 cols -->
-					
-					
-					<!-- 4 cols -->
-					<div class="one-fourth">
-						<h4 class="heading">One fourth columns</h4>
+					<div>
+						<h5>성별</h5>
+						남<input type="radio" size="100px" id="mgender" name="mgender">&nbsp;
+						여<input type="radio" id="mgender" name="mgender">
+						<p></p>
 					</div>
-					
-					<div class="one-fourth">
-						<h4 class="heading">One fourth columns</h4>
+					<div>
+						<h5>핸드폰 번호</h5>
+						<input type="text" id="fmphone" name="fmphone" class="a">-
+						<input type="text" id="smphone" name="smphone" class="a">-
+						<input type="text" id="tmphone" name="tmphone" class="a">
 					</div>
-					
-					<div class="one-fourth">
-						<h4 class="heading">One fourth columns</h4>
+					<div>
+						<h5>우편번호</h5>
+						<input type="text" id="maddrcd" name="maddrcd" readonly="readonly">
+						<p></p>
 					</div>
-					
-					<div class="one-fourth last">
-						<h4 class="heading">One fourth columns</h4>
+					<div>
+						<h5>주소 &nbsp; <input type="button" id="addrbtn" value="주소찾기"></h5>
+						<input type="text" id="maddr" name="maddr" readonly="readonly">
+						<p></p>
 					</div>
-					<div class="clearfix"></div>
-					<!-- ENDS 4 cols -->
+					<div>
+						<h5>이메일</h5>
+						<input type="text" id="firstmemail" name="firstmemail">
+						<select id="secondmemail" name="secondmemail">
+							<option value="@gmail.com">gmail.com</option>							
+							<option value="@naver.com">naver.com</option>							
+							<option value="@nate.com">naver.com</option>							
+							<option value="@daum.net">naver.com</option>							
+						</select>
+					</div>
+					</form>
+					<button id="subbtn" class="link-button green">&nbsp;등록&nbsp;</button>
+					<button id="cencle" class="link-button red">&nbsp;취소&nbsp;</button>
+	        		
+	        		
 										
 				</div>
 				<!-- ENDS entry-content -->	
+				
     		</div>
     		<!-- ENDS page content-->
 			

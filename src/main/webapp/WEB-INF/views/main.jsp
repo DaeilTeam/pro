@@ -4,7 +4,7 @@
 <html class="no-js">
 
 	<head>
-		<title>Fㅇㅇㅇ</title>
+		<title>메인화면</title>
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->

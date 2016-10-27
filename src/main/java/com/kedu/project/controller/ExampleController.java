@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class ExampleController {
 	
-	@RequestMapping(value="/index2", method = RequestMethod.GET)
+	@RequestMapping(value="/main", method = RequestMethod.GET)
 	public void examepleTest(){
 		
 	}
@@ -64,6 +64,11 @@ public class ExampleController {
 	}
 	@RequestMapping(value="/test", method = RequestMethod.GET)
 	public void exampleTest(){
+		
+	}
+
+	@RequestMapping(value="/input", method = RequestMethod.GET)
+	public void MemberInput(){
 		
 	}
 	
