@@ -81,7 +81,7 @@
 		
 		<style type="text/css">
 			.a{
-				width: 60px;
+				width: 40px;
 			}
 			.bigfont{
 				font-weight:bold;
@@ -143,52 +143,51 @@
 					<div class="clearfix"><p></p></div>
 					<form action="single.html" method="post" id="inputform">
 					<div class="last">
-						<h4>아이디</h4>
-						<input type="text" id="mid" name="mid" maxlength="10"> &nbsp; <input type="button" value="중복체크">
+						<h5>아이디</h5>
+						<input type="text" id="mid" name="mid" maxlength="10">
 						<p></p>
 					</div>
 					<div class="last">
-						<h4>비밀번호</h4>
+						<h5>비밀번호</h5>
 						<input type="password" id="mpw" name="mpw" maxlength="20">
 						<p></p>
 					</div>
 					<div class="last">
-						<h4>비밀번호 확인</h4>
+						<h5>비밀번호 확인</h5>
 						<input type="password" id="rempw" name="rempw" maxlength="20">
 						<p></p>
 					</div>
 					<div class="last">
-						<h4>성명</h4>
-						<input type="text" id="mnm" name="mnm" maxlength="5">
+						<h5>성명</h5>
+						<input type="password" id="mnm" name="mnm" maxlength="5">
 						<p></p>
 					</div>
 					<div>
-						<h4>성별</h4>
-						<p></p>
-						<label class="bigfont" for="mmgender">남</label><input type="radio" size="100px" id="mmgender" name="mgender">
-						<label class="bigfont" for="mwgender">여</label><input type="radio" id="mwgender" name="mgender">
+						<h5>성별</h5>
+						남<input type="radio" size="100px" id="mgender" name="mgender">&nbsp;
+						여<input type="radio" id="mgender" name="mgender">
 						<p></p>
 					</div>
 					<div>
-						<h4>핸드폰 번호</h4>
+						<h5>핸드폰 번호</h5>
 						<input type="text" id="fmphone" name="fmphone" class="a"> <span class="bigfont">─</span> 
 						<input type="text" id="smphone" name="smphone" class="a"> <span class="bigfont">─</span> 
 						<input type="text" id="tmphone" name="tmphone" class="a">
 					</div>
 					<div>
-						<h4>우편번호</h4>
+						<h5>우편번호</h5>
 						<input type="text" id="maddrcd" name="maddrcd" readonly="readonly">
 						<p></p>
 					</div>
 					<div>
-						<h4>주소 &nbsp; <input type="button" id="addrbtn" value="주소찾기"></h4>
+						<h5>주소 &nbsp; <input type="button" id="addrbtn" value="주소찾기"></h5>
 						<input type="text" id="maddr" name="maddr" readonly="readonly">
 						<p></p>
 					</div>
 					<div>
-						<h4>이메일</h4>
-						<input type="text" id="firstmemail" name="firstmemail"> <span class="bigfont"> @ </span> 
-						<select id="secondmemail" class="inputselect" name="secondmemail">
+						<h5>이메일</h5>
+						<input type="text" id="firstmemail" name="firstmemail">
+						<select id="secondmemail" name="secondmemail">
 							<option value="@gmail.com">gmail.com</option>							
 							<option value="@naver.com">naver.com</option>							
 							<option value="@nate.com">naver.com</option>							
@@ -196,8 +195,8 @@
 						</select>
 					</div>
 					</form>
-					<button id="subbtn" class="link-button green bigfont">&nbsp;등록&nbsp;</button>
-					<button id="cencle" class="link-button red bigfont">&nbsp;취소&nbsp;</button>
+					<button id="subbtn" class="link-button green">&nbsp;등록&nbsp;</button>
+					<button id="cencle" class="link-button red">&nbsp;취소&nbsp;</button>
 	        		
 	        		
 										
