@@ -76,9 +76,16 @@
 		<!-- reply move form -->
 		<script src="js/moveform.js"></script>
 		
+		<!-- 회원가입 from 장식용 -->
+		<link rel="stylesheet" href="css/forminput.css"/>
+		
 		<style type="text/css">
 			.a{
-				width: 20px;
+				width: 40px;
+			}
+			.bigfont{
+				font-weight:bold;
+				font-size: 20px;
 			}
 		</style>
 		
@@ -134,7 +141,7 @@
 						우리 사이트에 회원가입 하실 큰 결심을 하신 것을 환영합니다. 고객님. 회원가입시 다양하지 않은 정보와 아무 의미도 없는 평점 시스템, 별 내용없는 게시판을 즐길 수 있습니다. 회원가입시 고객님의 개인정보는 저희 사이트에 귀속되며, 후일 고객님의 개인정보는 타 음식점의 정보 공제를 위해 팔려나갈 수 있다는 점을 유의해주시길 바랍니다. 가입시 고객님의  핸드폰번호를 이용해 다양한 소액결제가 이루어질 수 있으며, 이에 대해서 본 사이트는 어떠한 책임도 지지않음을 미리 알립니다. 
 					</div>
 					<div class="clearfix"><p></p></div>
-					<form action="single.html" method="post" id="commentform">
+					<form action="single.html" method="post" id="inputform">
 					<div class="last">
 						<h5>아이디</h5>
 						<input type="text" id="mid" name="mid" maxlength="10">
@@ -163,8 +170,8 @@
 					</div>
 					<div>
 						<h5>핸드폰 번호</h5>
-						<input type="text" id="fmphone" name="fmphone" class="a">-
-						<input type="text" id="smphone" name="smphone" class="a">-
+						<input type="text" id="fmphone" name="fmphone" class="a"> <span class="bigfont">─</span> 
+						<input type="text" id="smphone" name="smphone" class="a"> <span class="bigfont">─</span> 
 						<input type="text" id="tmphone" name="tmphone" class="a">
 					</div>
 					<div>
