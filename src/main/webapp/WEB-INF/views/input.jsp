@@ -75,7 +75,7 @@
 		
 		<!-- reply move form -->
 		<script src="js/moveform.js"></script>
-		
+
 		<style type="text/css">
 			.a{
 				width: 20px;
@@ -165,6 +165,104 @@
 						<h5>핸드폰 번호</h5>
 						<input type="text" id="fmphone" name="fmphone" class="a">-
 						<input type="text" id="smphone" name="smphone" class="a">-
+=======
+		<!-- 회원가입 from 장식용 -->
+		<link rel="stylesheet" href="css/forminput.css"/>
+		
+		<style type="text/css">
+			.a{
+				width: 40px;
+			}
+			.bigfont{
+				font-weight:bold;
+				font-size: 20px;
+			}
+		</style>
+		
+	</head>
+	
+	
+	<body class="page">
+	
+		<!-- HEADER -->
+		<header>
+			<div class="wrapper cf">
+				
+				<div id="logo">
+					<a href="index.html"><img  src="img/logo.png" alt="Simpler"></a>
+				</div>
+				
+				<!-- nav -->
+				<ul id="nav" class="sf-menu">
+					<li><a href="index.html"><span>HOME</span></a></li>
+					<li><a href="blog.html">BLOG</a></li>
+					<li class="current-menu-item"><a href="page.html">ABOUT</a>
+						<ul>
+							<li><a href="page-elements.html">Elements</a></li>
+							<li><a href="page-icons.html">Icons</a></li>
+							<li><a href="page-typography.html">Typography</a></li>
+						</ul>
+					</li>
+					<li><a href="portfolio.html">WORK</a></li>
+					<li><a href="contact.html">CONTACT</a></li>
+				</ul>
+				<div id="combo-holder"></div>
+				<!-- ends nav -->
+
+			</div>
+		</header>
+		<!-- ENDS HEADER -->
+		
+		<!-- MAIN -->
+		<div id="main">
+			<div class="wrapper cf">
+			
+			
+			
+			<!-- page content-->
+        	<div id="page-content" class="cf">        	
+	        	
+	        	
+	        	<!-- entry-content -->	
+	        	<div class="entry-content cf">
+	        	
+	        		<div class="one-one last">
+						<h2 class="heading">회원가입</h2>
+						우리 사이트에 회원가입 하실 큰 결심을 하신 것을 환영합니다. 고객님. 회원가입시 다양하지 않은 정보와 아무 의미도 없는 평점 시스템, 별 내용없는 게시판을 즐길 수 있습니다. 회원가입시 고객님의 개인정보는 저희 사이트에 귀속되며, 후일 고객님의 개인정보는 타 음식점의 정보 공제를 위해 팔려나갈 수 있다는 점을 유의해주시길 바랍니다. 가입시 고객님의  핸드폰번호를 이용해 다양한 소액결제가 이루어질 수 있으며, 이에 대해서 본 사이트는 어떠한 책임도 지지않음을 미리 알립니다. 
+					</div>
+					<div class="clearfix"><p></p></div>
+					<form action="single.html" method="post" id="inputform">
+					<div class="last">
+						<h5>아이디</h5>
+						<input type="text" id="mid" name="mid" maxlength="10">
+						<p></p>
+					</div>
+					<div class="last">
+						<h5>비밀번호</h5>
+						<input type="password" id="mpw" name="mpw" maxlength="20">
+						<p></p>
+					</div>
+					<div class="last">
+						<h5>비밀번호 확인</h5>
+						<input type="password" id="rempw" name="rempw" maxlength="20">
+						<p></p>
+					</div>
+					<div class="last">
+						<h5>성명</h5>
+						<input type="password" id="mnm" name="mnm" maxlength="5">
+						<p></p>
+					</div>
+					<div>
+						<h5>성별</h5>
+						남<input type="radio" size="100px" id="mgender" name="mgender">&nbsp;
+						여<input type="radio" id="mgender" name="mgender">
+						<p></p>
+					</div>
+					<div>
+						<h5>핸드폰 번호</h5>
+						<input type="text" id="fmphone" name="fmphone" class="a"> <span class="bigfont">─</span> 
+						<input type="text" id="smphone" name="smphone" class="a"> <span class="bigfont">─</span> 
+>>>>>>> branch 'master' of https://github.com/DaeilTeam/pro.git
 						<input type="text" id="tmphone" name="tmphone" class="a">
 					</div>
 					<div>
