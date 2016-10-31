@@ -18,7 +18,8 @@ public class HouseDto {
 	private String htime;
 	private String hholiday;
 	private String zipbunho;
-	private Date hwritedt;
+	private Date hwriterdt;
+	private String hlocation;
 	private int hmapx;
 	private int hmapy;
 	
@@ -130,21 +131,27 @@ public class HouseDto {
 	public void setZipbunho(String zipbunho) {
 		this.zipbunho = zipbunho;
 	}
-	public Date getHwritedt() {
-		return hwritedt;
+	public Date getHwriterdt() {
+		return hwriterdt;
 	}
-	public void setHwritedt(Date hwritedt) {
-		this.hwritedt = hwritedt;
+	public void setHwriterdt(Date hwriterdt) {
+		this.hwriterdt = hwriterdt;
+	}
+	public String getHlocation() {
+		return hlocation;
+	}
+	public void setHlocation(String hlocation) {
+		this.hlocation = hlocation;
 	}
 	@Override
 	public String toString() {
 		return "HouseDto [hno=" + hno + ", hnm=" + hnm + ", hcontent=" + hcontent + ", hkind=" + hkind + ", hphone="
 				+ hphone + ", hmenu=" + hmenu + ", hdetail=" + hdetail + ", himg=" + himg + ", hspecial=" + hspecial
 				+ ", haddr=" + haddr + ", hlevel=" + hlevel + ", hvisit=" + hvisit + ", htime=" + htime + ", hholiday="
-				+ hholiday + ", zipbunho=" + zipbunho + ", hwritedt=" + hwritedt + ", hmapx=" + hmapx + ", hmapy="
-				+ hmapy + "]";
+				+ hholiday + ", zipbunho=" + zipbunho + ", hwriterdt=" + hwriterdt + ", hlocation=" + hlocation
+				+ ", hmapx=" + hmapx + ", hmapy=" + hmapy + "]";
 	}
-
+	
 	
 	
 }
