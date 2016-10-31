@@ -1,4 +1,4 @@
-package com.kedu.board.Dto;
+package com.kedu.board.dto;
 
 import java.util.Date;
 

@@ -2,7 +2,7 @@ package com.kedu.board.service;
 
 import java.util.List;
 
-import com.kedu.board.Dto.BoardDto;
+import com.kedu.board.dto.BoardDto;
 
 public interface BoardService {
 

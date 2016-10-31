@@ -6,8 +6,8 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.kedu.board.Dao.BoardDao;
-import com.kedu.board.Dto.BoardDto;
+import com.kedu.board.dao.BoardDao;
+import com.kedu.board.dto.BoardDto;
 
 @Service
 public class BoardServiceImpl implements BoardService {

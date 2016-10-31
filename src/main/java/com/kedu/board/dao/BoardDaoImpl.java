@@ -1,4 +1,4 @@
-package com.kedu.board.Dao;
+package com.kedu.board.dao;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.kedu.board.Dto.BoardDto;
+import com.kedu.board.dto.BoardDto;
 
 @Repository
 public class BoardDaoImpl implements BoardDao {

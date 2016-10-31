@@ -1,8 +1,8 @@
-package com.kedu.board.Dao;
+package com.kedu.board.dao;
 
 import java.util.List;
 
-import com.kedu.board.Dto.BoardDto;
+import com.kedu.board.dto.BoardDto;
 
 public interface BoardDao {
 
