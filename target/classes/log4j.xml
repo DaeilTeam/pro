@@ -9,7 +9,14 @@
 			<param name="ConversionPattern" value="%-5p: %c - %m%n" />
 		</layout>
 	</appender>
-	
+	<appender name="dailyout" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="c:/logs/dailyout.log"/>
+		<param name="Append" value="true"/>
+		<param name="DatePattern" value="'.'yyMMdd"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%t> [%d{yyyy-MM-dd HH:mm:ss}] [%c{1}] [%L] [%p] %m %n"/>
+		</layout>
+	</appender>
 	<!-- Application Loggers -->
 	<logger name="com.kedu.board">
 		<level value="info" />
@@ -34,7 +41,7 @@
 
 	<!-- Root Logger -->
 	<root>
-		<priority value="warn" />
+		<priority value="info" />
 		<appender-ref ref="console" />
 	</root>
 	
