@@ -42,4 +42,5 @@ public class BoardDaoImpl implements BoardDao {
 		return session.selectList(namespace + ".listAll");
 	}
 	
+	
 }
