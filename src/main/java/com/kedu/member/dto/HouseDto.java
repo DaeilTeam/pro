@@ -1,9 +1,8 @@
-package com.kedu.house.dto;
-
-import java.util.Date;
+package com.kedu.member.dto;
 
 public class HouseDto {
-	private int hno;
+
+	private String hno;
 	private String hnm;
 	private String hcontent;
 	private String hkind;
@@ -17,34 +16,10 @@ public class HouseDto {
 	private String hvisit;
 	private String htime;
 	private String hholiday;
-	private String zipbunho;
-	private Date hwriterdt;
-	private String hlocation;
-	private int hmapx;
-	private int hmapy;
-	
-	public String getHaddr() {
-		return haddr;
-	}
-	public void setHaddr(String haddr) {
-		this.haddr = haddr;
-	}
-	public int getHmapx() {
-		return hmapx;
-	}
-	public void setHmapx(int hmapx) {
-		this.hmapx = hmapx;
-	}
-	public int getHmapy() {
-		return hmapy;
-	}
-	public void setHmapy(int hmapy) {
-		this.hmapy = hmapy;
-	}
-	public int getHno() {
+	public String getHno() {
 		return hno;
 	}
-	public void setHno(int hno) {
+	public void setHno(String hno) {
 		this.hno = hno;
 	}
 	public String getHnm() {
@@ -95,10 +70,10 @@ public class HouseDto {
 	public void setHspecial(String hspecial) {
 		this.hspecial = hspecial;
 	}
-	public String gethaddr() {
+	public String getHaddr() {
 		return haddr;
 	}
-	public void sethaddr(String haddr) {
+	public void setHaddr(String haddr) {
 		this.haddr = haddr;
 	}
 	public String getHlevel() {
@@ -125,33 +100,13 @@ public class HouseDto {
 	public void setHholiday(String hholiday) {
 		this.hholiday = hholiday;
 	}
-	public String getZipbunho() {
-		return zipbunho;
-	}
-	public void setZipbunho(String zipbunho) {
-		this.zipbunho = zipbunho;
-	}
-	public Date getHwriterdt() {
-		return hwriterdt;
-	}
-	public void setHwriterdt(Date hwriterdt) {
-		this.hwriterdt = hwriterdt;
-	}
-	public String getHlocation() {
-		return hlocation;
-	}
-	public void setHlocation(String hlocation) {
-		this.hlocation = hlocation;
-	}
 	@Override
 	public String toString() {
 		return "HouseDto [hno=" + hno + ", hnm=" + hnm + ", hcontent=" + hcontent + ", hkind=" + hkind + ", hphone="
 				+ hphone + ", hmenu=" + hmenu + ", hdetail=" + hdetail + ", himg=" + himg + ", hspecial=" + hspecial
 				+ ", haddr=" + haddr + ", hlevel=" + hlevel + ", hvisit=" + hvisit + ", htime=" + htime + ", hholiday="
-				+ hholiday + ", zipbunho=" + zipbunho + ", hwriterdt=" + hwriterdt + ", hlocation=" + hlocation
-				+ ", hmapx=" + hmapx + ", hmapy=" + hmapy + "]";
+				+ hholiday + "]";
 	}
-	
 	
 	
 }
