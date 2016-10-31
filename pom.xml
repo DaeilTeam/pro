@@ -202,15 +202,11 @@
 			<artifactId>imgscalr-lib</artifactId>
 			<version>4.2</version>
 		</dependency>
-<<<<<<< HEAD
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.5.4</version>
 		</dependency>
-=======
-		
->>>>>>> bf1760c8d35da735e14181095ced7e53fe957dee
 	</dependencies>
 	<build>
 		<plugins>

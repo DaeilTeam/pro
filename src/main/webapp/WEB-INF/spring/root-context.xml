@@ -38,9 +38,11 @@
    <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
  </bean>
  
- <context:component-scan base-package="com.kedu.board.dao"></context:component-scan>
- <context:component-scan base-package="com.kedu.board.service"></context:component-scan>
- <context:component-scan base-package="com.kedu.board.aop"></context:component-scan>
+<context:component-scan base-package="com.kedu" use-default-filters="false">
+	<context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+	<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+	<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+</context:component-scan>
   
   	<aop:config>
 	</aop:config>

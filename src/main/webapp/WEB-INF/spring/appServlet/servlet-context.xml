@@ -21,15 +21,11 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-<<<<<<< HEAD
-    <context:component-scan base-package="com.kedu" use-default-filters="false">
-        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
-        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
-        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
-    </context:component-scan>
-=======
-	<context:component-scan base-package="com.kedu.board.controller" />
->>>>>>> bf1760c8d35da735e14181095ced7e53fe957dee
+	<context:component-scan base-package="com.kedu" use-default-filters="false">
+	<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+	<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+</context:component-scan>
 	
 	<beans:bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
