@@ -7,4 +7,7 @@ import com.kedu.house.dto.HouseDto;
 public interface HouseDao {
 	public List<HouseDto> listAll()throws Exception;
 	
+	public String getTime();
+	
+	public void insertHouse(HouseDto dto);
 }

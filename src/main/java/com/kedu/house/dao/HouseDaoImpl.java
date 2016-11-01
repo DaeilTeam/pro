@@ -21,4 +21,14 @@ public class HouseDaoImpl implements HouseDao{
 	public List<HouseDto> listAll() throws Exception {
 		return session.selectList(namespace+".listAll");
 	}
+	
+	@Override
+	public String getTime() {
+		return session.selectOne(namespace+".getTime");
+	}
+	
+	@Override
+	public void insertHouse(HouseDto dto){
+		session.insert(namespace+".insertHouse",dto);
+	}
 }
