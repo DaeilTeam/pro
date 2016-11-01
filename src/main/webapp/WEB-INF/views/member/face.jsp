@@ -22,18 +22,35 @@
 			font-size: 20px;
 		}
 	</style>
+	<script src="http://connect.facebook.net/ko_KR/all.js"></script>
 	<script>
+		alert("hhh");
+	
 		function statusChangeCallback(response) {
 			console.log('statusChangeCallback');
 			console.log(response);	
 			if (response.status === 'connected') {
 				testAPI();
+				getUser();
+				FB.getLoginStatus(function(response) {
+					 if (response.session) {
+						 alert("로그인 됨");
+					 } else {
+						 alert("로그인 전혀 안됨");
+					 }
+				});
 			} else if (response.status === 'not_authorized') {
-				document.getElementById('status').innerHTML = 'Please log ' +
-				'into this app.';
+				alert("응 이 아이디 인정 안해~");
 			} else {
-				document.getElementById('status').innerHTML = 'Please log ' +
-				'into Facebook.';
+				alert("로그인이 안됨 ㅎㅎ;;");
+				FB.getLoginStatus(handleSessionResponse);
+				function handleSessionResponse(response) { 
+					if (!response.session) { 
+					   FB.login(handleSessionResponse);
+					   return; 
+					} else{
+					}
+				}
 			}
 		}
 
@@ -45,10 +62,10 @@
 
 		window.fbAsyncInit = function() {
 			FB.init({
-				appId      : '{your-app-id}',
+				appId      : '{1066099180183227}',
 				cookie     : true,
 				xfbml      : true,  
-				version    : 'v2.5'
+				version    : 'v2.8'
 			});
 
 			FB.getLoginStatus(function(response) {
@@ -62,7 +79,7 @@
 			var js, fjs = d.getElementsByTagName(s)[0];
 			if (d.getElementById(id)) return;
 			js = d.createElement(s); js.id = id;
-			js.src = "//connect.facebook.net/en_US/sdk.js";
+			js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8&appId=1066099180183227";
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 
@@ -72,8 +89,37 @@
 			console.log('Successful login for: ' + response.name);
 			document.getElementById('status').innerHTML =
 			'Thanks for logging in, ' + response.name + '!';
-		});
-	}
+			});
+			
+		}
+		
+		function getUser(){
+			alert("ㅋㅋㅋㅋ");
+			 FB.getLoginStatus(handleSessionResponse);
+			 alert("ㅎㅎㅎㅎ");
+			 function handleSessionResponse(response) { 
+			 	if (!response.session) {
+				alert("노 연결 ㅋ");
+				} else{
+			    	FB.api( 
+			    	{
+			    	  method: 'fql.query', 
+			    	  query: 'select uid,name,email,pic_square from user where uid  = "' + FB.getSession().uid + '"'
+			   		}, 
+					function(response) {
+						for(var i=0; i < response.length; i++){
+							alert("확인");
+							response[i].uid; //유저아이디
+							response[i].pic_square; // 사진
+							response[i].name; // 이름
+							response[i].email; // 이메일주소
+							alert(response);
+						}
+			    	});
+				}
+			} 
+		}
+		
 </script>
 </head>
 	
@@ -110,22 +156,9 @@
 				<input type="submit" class="link-button green" value=" 로그인 "/>
 				<input type="button" id="censle" class="link-button red" value=" 취소 "/>
 				</form>
-				
-				<div id="fb-root"></div>
-				<script>
-				(function(d, s, id) {
-					var js, fjs = d.getElementsByTagName(s)[0];
-					if (d.getElementById(id)) return;
-					js = d.createElement(s); js.id = id;
-					js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8";
-					fjs.parentNode.insertBefore(js, fjs);
-				}(document, 'script', 'facebook-jssdk'));
-				</script>
-				<div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"></div>
-				
-				<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+				<fb:login-button data-size="xlarge" scope="public_profile,email" onlogin="checkLoginState();">
 				</fb:login-button>
-					
+				
 				<div id="status">
 				</div>
 			</div>
