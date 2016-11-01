@@ -8,7 +8,7 @@
 		insert into board (btitle, bcontent, bwriter) values(#{btitle}, #{bcontent}, #{bwriter})
 	</insert>
 
-	<select id="read" resultType="com.kedu.board.dto.BoardDto">
+	<select id="read" resultType="BoardDto">
 		select bno, btitle, bcontent, bwritedt, bcount, bwriter from board where bno = #{bno}
 	</select>
 
@@ -21,10 +21,46 @@
 	</delete>
 
 
-	<select id="listAll" resultType="com.kedu.board.dto.BoardDto">
+	<select id="listPage" resultType="BoardDto">
 	<![CDATA[
-		select bno, btitle, bcontent, bwritedt, bcount, bwriter form board where bno > 0 order by bno desc, bwritedt desc
+		select bno, btitle, bcontent, bwritedt, bcount, bwriter from board
+		where bno > 0 order by bno desc, bwritedt desc limit #{page}, 10
 	]]>
+	</select>
+	
+	<select id="listCriteria" resultType="BoardDto">
+	<![CDATA[
+		select bno, btitle, bcontent, bwritedt, bcount, bwriter from board
+		where bno > 0 order by bno desc, bwritedt desc limit #{pageStart}, #{perPageNum}
+	]]>
+	</select>
+	
+	<select id="countPaging" resultType="int">
+	<![CDATA[
+		select count(bno) from board
+		where bno > 0
+	]]>
+	</select>
+	
+	<select id="listSearch" resultType="BoardDto">
+	<![CDATA[
+		select bno, btitle, bcontent, bwritedt, bcount, bwriter from board
+		where bno > 0 
+	]]>
+	
+		<include refid="search"></include>
+	
+	<![CDATA[
+		order by bno desc, bwritedt desc limit #{pageStart}, #{perPageNum}
+	]]>
+	</select>
+	
+	<select id="listSearchCount" resultType="int">
+	<![CDATA[
+		select count(bno) from board
+		where bno > 0
+	]]>
+		<include refid="search"></include>
 	</select>
 
 </mapper>
