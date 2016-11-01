@@ -4,11 +4,6 @@
 	"http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-<<<<<<< HEAD
 		<package name="com.kedu.*"/>
-=======
-		<package name="com.kedu.house.dto"/>
-		<package name="com.kedu.board.dto"/>
->>>>>>> b33df5c46b1061b5fd5cff32455ff09bbba1cc40
 	</typeAliases>
 </configuration>
