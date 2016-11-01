@@ -32,7 +32,7 @@ public class BoardController {
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String registPOST(BoardDto board, RedirectAttributes rttr) throws Exception {
 		
-		logger.info("register post...........");
+		logger.info("regist post...........");
 		logger.info(board.toString());
 		
 		service.regist(board);

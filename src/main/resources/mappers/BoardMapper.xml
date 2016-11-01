@@ -8,7 +8,7 @@
 		insert into board (btitle, bcontent, bwriter) values(#{btitle}, #{bcontent}, #{bwriter})
 	</insert>
 
-	<select id="read" resultType="BoardDto">
+	<select id="read" resultType="com.kedu.board.dto.BoardDto">
 		select bno, btitle, bcontent, bwritedt, bcount, bwriter from board where bno = #{bno}
 	</select>
 
@@ -21,7 +21,7 @@
 	</delete>
 
 
-	<select id="listAll" resultType="BoardDto">
+	<select id="listAll" resultType="com.kedu.board.dto.BoardDto">
 	<![CDATA[
 		select bno, btitle, bcontent, bwritedt, bcount, bwriter form board where bno > 0 order by bno desc, bwritedt desc
 	]]>
