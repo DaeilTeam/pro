@@ -23,21 +23,17 @@
 		<property name="configLocation" value="classpath:/mybatis-config.xml"></property>
 		<property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml"></property>
 	</bean>
-<<<<<<< HEAD
-	
+
 <!-- 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean> -->
 	
-	<bean id="sqlsession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
-=======
 
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"
 		destroy-method="clearCache">
->>>>>>> ee1122b59eea8d34271e700fb3e154a6eb41b78c
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
-	</bean>
+	</bean> 
 
 	<context:component-scan base-package="com.kedu.*"
 		use-default-filters="false">
