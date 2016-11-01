@@ -11,76 +11,76 @@
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link rel="stylesheet" media="all" href="css/style.css"/>
+		<link rel="stylesheet" media="all" href="/css/style.css"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->		
 				
 		<!-- JS -->
-		<script src="js/jquery-1.7.1.min.js"></script>
-		<script src="js/custom.js"></script>
-		<script src="js/tabs.js"></script>
-		<script src="js/css3-mediaqueries.js"></script>
-		<script src="js/jquery.columnizer.min.js"></script>
+		<script src="/js/jquery-1.7.1.min.js"></script>
+		<script src="/js/custom.js"></script>
+		<script src="/js/tabs.js"></script>
+		<script src="/js/css3-mediaqueries.js"></script>
+		<script src="/js/jquery.columnizer.min.js"></script>
 		
 		<!-- Isotope -->
-		<script src="js/jquery.isotope.min.js"></script>
+		<script src="/js/jquery.isotope.min.js"></script>
 		
 		<!-- Tweet -->
-		<link rel="stylesheet" href="css/jquery.tweet.css" media="all"  /> 
-		<script src="js/tweet/jquery.tweet.js" ></script> 
+		<link rel="stylesheet" href="/css/jquery.tweet.css" media="all"  /> 
+		<script src="/js/tweet/jquery.tweet.js" ></script> 
 		<!-- ENDS Tweet -->
 		
 		<!-- superfish -->
-		<link rel="stylesheet" media="screen" href="css/superfish.css" /> 
-		<script  src="js/superfish-1.4.8/js/hoverIntent.js"></script>
-		<script  src="js/superfish-1.4.8/js/superfish.js"></script>
-		<script  src="js/superfish-1.4.8/js/supersubs.js"></script>
+		<link rel="stylesheet" media="screen" href="/css/superfish.css" /> 
+		<script  src="/js/superfish-1.4.8/js/hoverIntent.js"></script>
+		<script  src="/js/superfish-1.4.8/js/superfish.js"></script>
+		<script  src="/js/superfish-1.4.8/js/supersubs.js"></script>
 		<!-- ENDS superfish -->
 		
 		<!-- prettyPhoto -->
-		<script  src="js/prettyPhoto/js/jquery.prettyPhoto.js"></script>
-		<link rel="stylesheet" href="js/prettyPhoto/css/prettyPhoto.css"  media="screen" />
+		<script  src="/js/prettyPhoto/js/jquery.prettyPhoto.js"></script>
+		<link rel="stylesheet" href="/js/prettyPhoto/css/prettyPhoto.css"  media="screen" />
 		<!-- ENDS prettyPhoto -->
 		
 		<!-- poshytip -->
-		<link rel="stylesheet" href="js/poshytip-1.1/src/tip-twitter/tip-twitter.css"  />
-		<link rel="stylesheet" href="js/poshytip-1.1/src/tip-yellowsimple/tip-yellowsimple.css"  />
-		<script  src="js/poshytip-1.1/src/jquery.poshytip.min.js"></script>
+		<link rel="stylesheet" href="/js/poshytip-1.1/src/tip-twitter/tip-twitter.css"  />
+		<link rel="stylesheet" href="/js/poshytip-1.1/src/tip-yellowsimple/tip-yellowsimple.css"  />
+		<script  src="/js/poshytip-1.1/src/jquery.poshytip.min.js"></script>
 		<!-- ENDS poshytip -->
 		
 		<!-- JCarousel -->
-		<script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
-		<link rel="stylesheet" media="screen" href="css/carousel.css" /> 
+		<script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
+		<link rel="stylesheet" media="screen" href="/css/carousel.css" /> 
 		<!-- ENDS JCarousel -->
 		
 		<!-- GOOGLE FONTS -->
 		<link href='http://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'>
 
 		<!-- modernizr -->
-		<script src="js/modernizr.js"></script>
+		<script src="/js/modernizr.js"></script>
 		
 		<!-- SKIN -->
-		<link rel="stylesheet" media="all" href="css/skin.css"/>
+		<link rel="stylesheet" media="all" href="/css/skin.css"/>
 		
 		<!-- Less framework -->
-		<link rel="stylesheet" media="all" href="css/lessframework.css"/>
+		<link rel="stylesheet" media="all" href="/css/lessframework.css"/>
 		
 		<!-- jplayer -->
-		<link href="player-skin/jplayer-black-and-yellow.css" rel="stylesheet" type="text/css" />
-		<script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+		<link href="/css/player-skin/jplayer-black-and-yellow.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="/js/jquery.jplayer.min.js"></script>
 		
 		<!-- flexslider -->
-		<link rel="stylesheet" href="css/flexslider.css" >
-		<script src="js/jquery.flexslider.js"></script>
+		<link rel="stylesheet" href="/css/flexslider.css" >
+		<script src="/js/jquery.flexslider.js"></script>
 		
 		<!-- reply move form -->
-		<script src="js/moveform.js"></script>
+		<script src="/js/moveform.js"></script>
 		
 		<!-- 회원가입 from 장식용 -->
-		<link rel="stylesheet" href="css/forminput.css"/>
+		<link rel="stylesheet" href="/css/forminput.css"/>
 		
 		<style type="text/css">
-			.a{
+			.phonetext{
 				width: 40px;
 			}
 			.bigfont{
@@ -99,7 +99,7 @@
 			<div class="wrapper cf">
 				
 				<div id="logo">
-					<a href="index.html"><img  src="img/logo.png" alt="Simpler"></a>
+					<a href="index.html"><img  src="/img/logo.png" alt="Simpler"></a>
 				</div>
 				
 				<!-- nav -->
@@ -170,9 +170,9 @@
 					</div>
 					<div>
 						<h5>핸드폰 번호</h5>
-						<input type="text" id="fmphone" name="fmphone" class="a"> <span class="bigfont">─</span> 
-						<input type="text" id="smphone" name="smphone" class="a"> <span class="bigfont">─</span> 
-						<input type="text" id="tmphone" name="tmphone" class="a">
+						<input type="text" id="fmphone" name="fmphone" class="phonetext"> <span class="bigfont">─</span> 
+						<input type="text" id="smphone" name="smphone" class="phonetext"> <span class="bigfont">─</span> 
+						<input type="text" id="tmphone" name="tmphone" class="phonetext">
 					</div>
 					<div>
 						<h5>우편번호</h5>
@@ -224,19 +224,19 @@
 						<div class="widget-block">
 							<h4>RECENT POSTS</h4>
 							<div class="recent-post cf">
-								<a href="#" class="thumb"><img src="img/dummies/54x54.gif" alt="Post" /></a>
+								<a href="#" class="thumb"><img src="/img/dummies/54x54.gif" alt="Post" /></a>
 								<div class="post-head">
 									<a href="#">Pellentesque habitant morbi senectus</a><span> March 12, 2011</span>
 								</div>
 							</div>
 							<div class="recent-post cf">
-								<a href="#" class="thumb"><img src="img/dummies/54x54.gif" alt="Post" /></a>
+								<a href="#" class="thumb"><img src="/img/dummies/54x54.gif" alt="Post" /></a>
 								<div class="post-head">
 									<a href="#">Pellentesque habitant morbi senectus</a><span> March 12, 2011</span>
 								</div>
 							</div>
 							<div class="recent-post cf">
-								<a href="#" class="thumb"><img src="img/dummies/54x54.gif" alt="Post" /></a>
+								<a href="#" class="thumb"><img src="/img/dummies/54x54.gif" alt="Post" /></a>
 								<div class="post-head">
 									<a href="#">Pellentesque habitant morbi senectus</a><span> March 12, 2011</span>
 								</div>
