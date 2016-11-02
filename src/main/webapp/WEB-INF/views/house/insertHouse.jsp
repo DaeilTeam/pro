@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<table>
+	<tr>맛집이름</tr>
+	<td></td>
+	
+	<tr>
+</table>
 </body>
 </html>
