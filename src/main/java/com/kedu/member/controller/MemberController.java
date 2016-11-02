@@ -40,7 +40,7 @@ public class MemberController {
 	public void memberInput(Model model)throws Exception{
 		logger.info("회원가입창");
 	}
-  
+
 	@RequestMapping(value="/main",method=RequestMethod.GET)
 	public void memberL(Model model)throws Exception{
 	
