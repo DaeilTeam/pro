@@ -1,6 +1,5 @@
 package com.kedu.member.controller;
 
-<<<<<<< HEAD
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -30,7 +29,6 @@ public class MemberController {
 	@RequestMapping(value="/face",method=RequestMethod.GET)
 	public void memberF(Model model)throws Exception{
 	}
-=======
 import java.util.Date;
 
 import javax.inject.Inject;
@@ -108,5 +106,4 @@ public class MemberController {
     }
   }
 
->>>>>>> a8b7827726ca782e339f07b4fbd1e995b0c4cf0b
 }
