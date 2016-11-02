@@ -1,17 +1,53 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<title>맛집 등록</title>
 </head>
 <body>
-<table>
-	<tr>맛집이름</tr>
-	<td></td>
-	
+<div class="main_content">
+<h2>맛집 등록</h2>
+<form action="houseList" method="post" name="frm">
+	<table class="" style="width : 750px">
 	<tr>
-</table>
+		<th> 맛집이름 </th>
+		<td><input type ="text" ></td>
+	</tr>
+	<tr>
+		<th> 전화번호 </th>
+		<td><input type ="text" ></td>
+	</tr>
+	<tr>
+		<th> 주소1 </th>
+		<td><input type ="text" ></td>
+	</tr>
+	<tr>
+		<th> 주소2 </th>
+		<td><input type ="text" ></td>
+	</tr>
+	<tr>
+		<th> 타마정보 </th>
+		<td><input type ="text" ></td>
+	</tr>
+	<tr>
+		<th> 영업시간 </th>
+		<td><input type ="text" ></td>
+	</tr>
+	<tr>
+		<th> 휴무 </th>
+		<td><input type ="text" ></td>
+	</tr>
+	<tr>
+			<td colspan="2" align="center">
+			<input type="submit" value="등록" onclick="return houseList()">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="button" value="취소">
+			</td>
+	</tr>
+	</table>
+</form>
+</div>
 </body>
 </html>
