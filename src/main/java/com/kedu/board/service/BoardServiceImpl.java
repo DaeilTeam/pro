@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.kedu.board.dao.BoardDao;
 import com.kedu.board.dto.BoardCriteria;
 import com.kedu.board.dto.BoardDto;
+import com.kedu.board.dto.BoardSearchCriteria;
 
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -46,5 +47,13 @@ public class BoardServiceImpl implements BoardService {
 		return dao.countPaging(cri);
 	}
 	
+	@Override
+	public List<BoardDto> listSearchCriteria(BoardSearchCriteria cri) throws Exception {
+		return dao.listSearch(cri);
+	}
 	
+	@Override
+	public int listSearchCount(BoardSearchCriteria cri) throws Exception {
+		return dao.listSearchCount(cri);
+	}
 }

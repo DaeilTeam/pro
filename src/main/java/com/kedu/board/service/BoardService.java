@@ -3,6 +3,7 @@ package com.kedu.board.service;
 import java.util.List;
 
 import com.kedu.board.dto.BoardDto;
+import com.kedu.board.dto.BoardSearchCriteria;
 import com.kedu.board.dto.BoardCriteria;
 
 public interface BoardService {
@@ -18,4 +19,8 @@ public interface BoardService {
 	public List<BoardDto> listCriteria(BoardCriteria cri) throws Exception;
 	
 	public int listCountCriteria(BoardCriteria cri) throws Exception;
+	
+	public List<BoardDto> listSearchCriteria(BoardSearchCriteria cri) throws Exception;
+	
+	public int listSearchCount(BoardSearchCriteria cri) throws Exception;
 }

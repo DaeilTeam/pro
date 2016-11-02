@@ -14,6 +14,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.kedu.board.dto.BoardDto;
 import com.kedu.board.dto.BoardPageMaker;
+import com.kedu.board.dto.BoardSearchCriteria;
 import com.kedu.board.dto.BoardCriteria;
 import com.kedu.board.service.BoardService;
 
@@ -78,27 +79,19 @@ public class BoardController {
 		rttr.addAttribute("perPageNum", cri.getPerPageNum());
 		rttr.addFlashAttribute("msg", "SUCCESS");
 		
-		return "redirect:/board/listPage";
+		return "redirect:/board/list";
 	}
 	
-	@RequestMapping(value = "/listCri", method = RequestMethod.GET)
-	public void listAll(BoardCriteria cri, Model model) throws Exception {
-		
-		logger.info("show list Page with Criteria................");
-		
-		model.addAttribute("list", service.listCriteria(cri));
-	}
-	
-	@RequestMapping(value = "/listPage", method = RequestMethod.GET)
-	public void listPage(@ModelAttribute("cri")BoardCriteria cri, Model model) throws Exception {
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	public void listPage(@ModelAttribute("cri") BoardSearchCriteria cri, Model model) throws Exception {
 		
 		logger.info(cri.toString());
 		
-		model.addAttribute("list", service.listCriteria(cri));
+		model.addAttribute("list", service.listSearchCriteria(cri));
 		BoardPageMaker pageMaker = new BoardPageMaker();
 		pageMaker.setCri(cri);
 		
-		pageMaker.setTotalCount(service.listCountCriteria(cri));
+		pageMaker.setTotalCount(service.listSearchCount(cri));
 		
 		model.addAttribute("BoardPageMaker", pageMaker);
 	}
