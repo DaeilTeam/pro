@@ -31,6 +31,11 @@ public class HouseServiceImpl implements HouseService{
 	public List<HouseDto> listAll() throws Exception {
 		return dao.listAll();
 	}
+	
+	@Override
+	public void insertHouse(HouseDto house) throws Exception {
+		dao.insertHouse(house);
+	}
 /*
 	@Override
 	public List<HouseDto> searchHouse(String keyword, int display, int start) throws Exception {
