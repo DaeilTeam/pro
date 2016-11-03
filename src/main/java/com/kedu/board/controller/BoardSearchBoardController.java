@@ -23,7 +23,7 @@ public class BoardSearchBoardController {
 	@Inject
 	private BoardService service;
 	
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	@RequestMapping(value = "/listPage", method = RequestMethod.GET)
 	public void listPage(@ModelAttribute("cri") BoardSearchCriteria cri, Model model) throws Exception {
 		
 		logger.info(cri.toString());

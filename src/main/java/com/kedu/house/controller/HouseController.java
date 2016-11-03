@@ -8,7 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.kedu.house.dto.HouseDto;
 import com.kedu.house.service.HouseService;
 
 @Controller
@@ -25,6 +27,25 @@ public class HouseController {
 		
 		model.addAttribute("list",service.listAll());
 	}
+	
+	@RequestMapping(value = "/insertHouse", method = RequestMethod.GET)
+	  public void insertHouseGET() throws Exception {
+
+	    logger.info("insertHouse get ...........");
+	  }
+
+	  @RequestMapping(value = "/insertHouse", method = RequestMethod.POST)
+	  public String insertHousePOST(HouseDto house, RedirectAttributes rttr) throws Exception {
+
+	    logger.info("insertHouse post ...........");
+	    logger.info(house.toString());
+
+	    service.insertHouse(house);
+
+	    rttr.addFlashAttribute("msg", "SUCCESS");
+
+	    return "redirect:/house/houseList";
+	  }
 	
 	/*
 	@RequestMapping(value="/houseList",method=RequestMethod.GET)
