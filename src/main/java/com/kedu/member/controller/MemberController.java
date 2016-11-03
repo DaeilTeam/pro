@@ -1,6 +1,5 @@
 package com.kedu.member.controller;
 
-<<<<<<< HEAD
 //<<<<<<< HEAD
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
@@ -64,9 +63,6 @@ package com.kedu.member.controller;
 //	}
 //=======
 //>>>>>>> f8da2118a6c0875972cbda9db5e2b9d6e7a1390f
-=======
-
->>>>>>> 5c9b5c3964178bdce6ce0c9fa3e804d24e3ccf3c
 import java.util.Date;
 
 import javax.inject.Inject;
