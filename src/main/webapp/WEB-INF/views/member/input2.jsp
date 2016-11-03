@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!doctype html> 
 <html class="no-js">
@@ -96,15 +95,40 @@
 	
 	<body class="page">
 	
-		
-		
-		<jsp:include page="../include/header.jsp"/>
+		<!-- HEADER -->
+		<header>
+			<div class="wrapper cf">
+				
+				<div id="logo">
+					<a href="index.html"><img  src="/img/logo.png" alt="Simpler"></a>
+				</div>
+				
+				<!-- nav -->
+				<ul id="nav" class="sf-menu">
+					<li><a href="index.html"><span>HOME</span></a></li>
+					<li><a href="blog.html">BLOG</a></li>
+					<li class="current-menu-item"><a href="page.html">ABOUT</a>
+						<ul>
+							<li><a href="page-elements.html">Elements</a></li>
+							<li><a href="page-icons.html">Icons</a></li>
+							<li><a href="page-typography.html">Typography</a></li>
+						</ul>
+					</li>
+					<li><a href="portfolio.html">WORK</a></li>
+					<li><a href="contact.html">CONTACT</a></li>
+				</ul>
+				<div id="combo-holder"></div>
+				<!-- ends nav -->
+
+			</div>
+		</header>
+		<!-- ENDS HEADER -->
 		
 		<!-- MAIN -->
 		<div id="main">
-			
-
 			<div class="wrapper cf">
+			
+			
 			
 			<!-- page content-->
         	<div id="page-content" class="cf">        	
@@ -189,8 +213,91 @@
 		</div>
 		<!-- ENDS MAIN -->
 		
-		<jsp:include page="../include/footer.jsp"/>
 		
+		<!-- FOOTER -->
+		<footer>
+			<div class="wrapper cf">
+			
+				<!-- widgets -->
+				<ul  class="widget-cols cf">
+					<li class="first-col">
+						
+						<div class="widget-block">
+							<h4>RECENT POSTS</h4>
+							<div class="recent-post cf">
+								<a href="#" class="thumb"><img src="/img/dummies/54x54.gif" alt="Post" /></a>
+								<div class="post-head">
+									<a href="#">Pellentesque habitant morbi senectus</a><span> March 12, 2011</span>
+								</div>
+							</div>
+							<div class="recent-post cf">
+								<a href="#" class="thumb"><img src="/img/dummies/54x54.gif" alt="Post" /></a>
+								<div class="post-head">
+									<a href="#">Pellentesque habitant morbi senectus</a><span> March 12, 2011</span>
+								</div>
+							</div>
+							<div class="recent-post cf">
+								<a href="#" class="thumb"><img src="/img/dummies/54x54.gif" alt="Post" /></a>
+								<div class="post-head">
+									<a href="#">Pellentesque habitant morbi senectus</a><span> March 12, 2011</span>
+								</div>
+							</div>
+						</div>
+					</li>
+					
+					<li class="second-col">
+						
+						<div class="widget-block">
+							<h4>ABOUT</h4>
+							<p>Folder it's completely free this means you don't have to pay anything <a href="http://luiszuno.com/blog/license" tar >read license</a>.</p> 
+							<p>Visit <a href="http://templatecreme.com/" >Template Creme</a> and find the most beautiful free templates up to date.</p>
+						</div>
+						
+					</li>
+					
+					<li class="third-col">
+						
+						<div class="widget-block">
+							<div id="tweets" class="footer-col tweet">
+		         				<h4>TWITTER WIDGET</h4>
+		         			</div>
+		         		</div>
+		         		
+					</li>
+					
+					<li class="fourth-col">
+						
+						<div class="widget-block">
+							<h4>CATEGORIES</h4>
+							<ul>
+								<li class="cat-item"><a href="#" >Design</a></li>
+								<li class="cat-item"><a href="#" >Photo</a></li>
+								<li class="cat-item"><a href="#" >Art</a></li>
+								<li class="cat-item"><a href="#" >Game</a></li>
+								<li class="cat-item"><a href="#" >Film</a></li>
+								<li class="cat-item"><a href="#" >TV</a></li>
+							</ul>
+						</div>
+		         		
+					</li>	
+				</ul>
+				<!-- ENDS widgets -->	
+				
+				
+				<!-- bottom -->
+				<div class="footer-bottom">
+					<div class="left">by <a href="http://luiszuno.com" >luiszuno.com</a></div>
+						<ul id="social-bar" class="cf sb">
+							<li><a href="http://www.facebook.com"  title="Become a fan" class="facebook">Facebbok</a></li>
+							<li><a href="http://www.twitter.com" title="Follow my tweets" class="twitter"></a></li>
+							<li><a href="http://plus.google.com" title="Enter my circles" class="plus"></a></li>
+						</ul>
+				</div>	
+				<!-- ENDS bottom -->
+			
+			</div>
+		</footer>
+		<!-- ENDS FOOTER -->
 		
 	</body>
 	
