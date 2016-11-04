@@ -16,6 +16,8 @@ public interface BoardDao {
 	
 	public void delete(int bno) throws Exception;
 	
+	public List<BoardDto> listAll() throws Exception;
+	
 	public List<BoardDto> listPage(int page) throws Exception;
 	
 	public List<BoardDto> listCriteria(BoardCriteria cri) throws Exception;

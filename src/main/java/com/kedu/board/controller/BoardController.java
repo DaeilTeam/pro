@@ -46,6 +46,13 @@ public class BoardController {
 		return "redirect:/board/listAll";
 	}
 	
+	@RequestMapping(value = "/listAll", method = RequestMethod.GET)
+	public void listAll(Model model) throws Exception {
+		
+		logger.info("show all list..........");
+		model.addAttribute("list", service.listAll());
+	}
+	
 	@RequestMapping(value = "/readPage", method = RequestMethod.GET)
 	public void read(@RequestParam("bno") int bno, @ModelAttribute("cri") BoardCriteria cri, Model model) throws Exception {
 		
@@ -80,6 +87,28 @@ public class BoardController {
 		rttr.addFlashAttribute("msg", "SUCCESS");
 		
 		return "redirect:/board/list";
+	}
+	
+	@RequestMapping(value = "/listCri", method = RequestMethod.GET)
+	public void listAll(BoardCriteria cri, Model model) throws Exception {
+		
+		logger.info("show list Page with Criteria..........");
+		
+		model.addAttribute("list", service.listCriteria(cri));
+	}
+	
+	@RequestMapping(value = "/listPage", method = RequestMethod.GET)
+	public void listPage(@ModelAttribute("cri") BoardCriteria cri, Model model) throws Exception {
+		
+		logger.info(cri.toString());
+		
+		model.addAttribute("list", service.listCriteria(cri));
+		BoardPageMaker pageMaker = new BoardPageMaker();
+		pageMaker.setCri(cri);
+		
+		pageMaker.setTotalCount(service.listCountCriteria(cri));
+		
+		model.addAttribute("pageMaker", pageMaker);
 	}
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)

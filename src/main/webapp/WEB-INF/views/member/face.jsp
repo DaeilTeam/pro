@@ -94,12 +94,9 @@
 		}
 		
 		function getUser(){
-			alert("ㅋㅋㅋㅋ");
 			 FB.getLoginStatus(handleSessionResponse);
-			 alert("ㅎㅎㅎㅎ");
 			 function handleSessionResponse(response) { 
 			 	if (!response.session) {
-				alert("노 연결 ㅋ");
 				} else{
 			    	FB.api( 
 			    	{
