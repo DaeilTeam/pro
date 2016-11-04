@@ -5,6 +5,16 @@
 <head>
 <meta charset="UTF-8">
 <title>맛집 등록</title>
+
+<style type="text/css">
+.insert_form input{
+	width: 300px;
+}
+.insert_form th{
+width: 180px;}
+
+</style>
+
 </head>
 <body>
 <div class="main_content">
@@ -13,19 +23,19 @@
 	<table class="" style="width : 750px">
 	<tr>
 		<th> 맛집이름 </th>
-		<td><input type ="text" ></td>
+		<td><input type ="text" name="hnm" size="20" ></td>
 	</tr>
 	<tr>
 		<th> 전화번호 </th>
-		<td><input type ="text" ></td>
+		<td><input type ="text" name="hphone" size="20"></td>
 	</tr>
 	<tr>
 		<th> 주소1 </th>
-		<td><input type ="text" ></td>
+		<td><input type ="text" name="haddr" readonly></td>
 	</tr>
 	<tr>
 		<th> 주소2 </th>
-		<td><input type ="text" ></td>
+		<td><input type ="text" name="haddr" ></td>
 	</tr>
 	<tr>
 		<th> 테마정보 </th>
@@ -33,11 +43,11 @@
 	</tr>
 	<tr>
 		<th> 영업시간 </th>
-		<td><input type ="text" ></td>
+		<td><input type ="text" name="htime" size="20"></td>
 	</tr>
 	<tr>
 		<th> 휴무 </th>
-		<td><input type ="text" ></td>
+		<td><input type ="text" name="hholiday" size="20"></td>
 	</tr>
 	<tr>
 			<td colspan="2" align="center">
