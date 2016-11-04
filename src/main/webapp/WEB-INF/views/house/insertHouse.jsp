@@ -28,7 +28,7 @@
 		<td><input type ="text" ></td>
 	</tr>
 	<tr>
-		<th> 타마정보 </th>
+		<th> 테마정보 </th>
 		<td><input type ="text" ></td>
 	</tr>
 	<tr>
