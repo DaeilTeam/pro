@@ -9,7 +9,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.kedu.board.dto.BoardDto;
 import com.kedu.board.dto.BoardPageMaker;
 import com.kedu.board.dto.BoardSearchCriteria;
 import com.kedu.board.service.BoardService;
@@ -23,7 +26,7 @@ public class BoardSearchBoardController {
 	@Inject
 	private BoardService service;
 	
-	@RequestMapping(value = "/listPage", method = RequestMethod.GET)
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public void listPage(@ModelAttribute("cri") BoardSearchCriteria cri, Model model) throws Exception {
 		
 		logger.info(cri.toString());
@@ -35,6 +38,51 @@ public class BoardSearchBoardController {
 		
 		pageMaker.setTotalCount(service.listCountCriteria(cri));
 		
-		model.addAttribute("BoardPageMaker", pageMaker);
+		model.addAttribute("pageMaker", pageMaker);
+	}
+	
+	@RequestMapping(value = "/readPage", method = RequestMethod.GET)
+	public void read(@RequestParam("bno") int bno, @ModelAttribute("cri") BoardSearchCriteria cri, Model model) throws Exception {
+		
+		model.addAttribute(service.read(bno));
+	}
+	
+	@RequestMapping(value = "/removePage", method = RequestMethod.POST)
+	public String remove(@RequestParam("bno") int bno, BoardSearchCriteria cri, RedirectAttributes rttr) throws Exception {
+		
+		service.remove(bno);
+		
+		rttr.addAttribute("page", cri.getPage());
+		rttr.addAttribute("perPageNum", cri.getPerPageNum());
+		rttr.addAttribute("searchType", cri.getSearchType());
+		rttr.addAttribute("keyword", cri.getKeyword());
+		
+		rttr.addFlashAttribute("msg", "SUCCESS");
+		
+		return "redirect:/board/list";
+	}
+	
+	@RequestMapping(value = "/modifyPage", method = RequestMethod.GET)
+	public void modifyPagingGET(int bno, @ModelAttribute("cri") BoardSearchCriteria cri, Model model) throws Exception {
+		
+		model.addAttribute(service.read(bno));
+	}
+	
+	@RequestMapping(value = "/modifyPage", method = RequestMethod.POST)
+	public String modifyPagingPOST(BoardDto board, BoardSearchCriteria cri, RedirectAttributes rttr) throws Exception {
+		
+		logger.info(cri.toString());
+		service.modify(board);
+		
+		rttr.addAttribute("page", cri.getPage());
+		rttr.addAttribute("perPageNum", cri.getPerPageNum());
+		rttr.addAttribute("searchType", cri.getSearchType());
+		rttr.addAttribute("keyword", cri.getKeyword());
+		
+		rttr.addFlashAttribute("msg", "SUCCESS");
+		
+		logger.info(rttr.toString());
+		
+		return "redirect:/board/list";
 	}
 }

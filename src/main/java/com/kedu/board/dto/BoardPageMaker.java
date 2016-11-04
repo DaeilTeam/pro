@@ -120,5 +120,5 @@ public class BoardPageMaker {
 		
 		return uriComponents.toUriString();
 	}
-	
+
 }
