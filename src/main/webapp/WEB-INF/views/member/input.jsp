@@ -15,7 +15,7 @@
 		
 		
 		<!-- 회원가입 from 장식용 -->
-		<link rel="stylesheet" href="/css/forminput.css"/>
+		<link rel="stylesheet" href="/resources/css/forminput.css"/>
 		
 		<script src="http://connect.facebook.net/ko_KR/all.js"></script>
 		<script>
