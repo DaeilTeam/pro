@@ -39,7 +39,7 @@ public class HouseController {
 
 	    logger.info("insertHouse post ...........");
 	    logger.info(house.toString());
-
+	    
 	    service.insertHouse(house);
 
 	    rttr.addFlashAttribute("msg", "SUCCESS");
