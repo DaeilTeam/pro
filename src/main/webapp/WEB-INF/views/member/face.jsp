@@ -5,6 +5,11 @@
 <html class="no-js">
 
 <head>
+<meta name="google-signin-scope" content="profile email">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+<script src="https://apis.google.com/js/api:client.js"></script>
+
 <link rel="stylesheet" media="all" href="/css/style.css" />
 <link rel="stylesheet" media="all" href="/css/skin.css" />
 <script src="/js/jquery-1.7.1.min.js"></script>
@@ -30,7 +35,9 @@
 </style>
 <script src="http://connect.facebook.net/ko_KR/all.js"></script>
 <script type="text/javascript">
+	//페이스북
 
+	//페이스북 appid, 버전 입력
 	window.fbAsyncInit = function() {
 		FB.init({
 			appId : '{1066099180183227}',
@@ -66,7 +73,7 @@
 		}
 	}
 
-	//로그인 여부 체크
+	//페이스북 로그인 여부 체크
 	function checkLoginState() {
 		FB.getLoginStatus(function(response) {
 			statusChangeCallback(response);
@@ -102,7 +109,43 @@
 		});
 	}
 	
+	// 구글 로그인
 	
+	var googleUser = {};
+	  var startApp = function() {
+	    gapi.load('auth2', function(){
+	      // Retrieve the singleton for the GoogleAuth library and set up the client.
+	      auth2 = gapi.auth2.init({
+	        client_id: '516768670649-csqp0komrhs8q8iocbtf9c2hmulfeqq8.apps.googleusercontent.com',
+	        cookiepolicy: 'single_host_origin',
+	        // Request scopes in addition to 'profile' and 'email'
+	        //scope: 'additional_scope'
+	      });
+	      attachSignin(document.getElementById('sns_google'));
+	    });
+	  };
+
+	  function attachSignin(element) {
+	    console.log(element.id);
+	    auth2.attachClickHandler(element, {},
+	        function(googleUser) {
+	          document.getElementById('name').innerText = "Signed in: " +
+	              googleUser.getBasicProfile().getName();
+	        }, function(error) {
+	          alert(JSON.stringify(error, undefined, 2));
+	        });
+	  }
+	  
+	  function onSignIn(googleUser) {
+
+		    var profile = googleUser.getBasicProfile();
+
+		    jQuery("#id").html(profile.getId());
+		    jQuery("#name").html(profile.getName());
+		    jQuery("#email").html(profile.getEmail());
+		    jQuery("#image_url").attr('src', profile.getImageUrl());
+		}
+	  
 	</script>
 </head>
 	
@@ -153,6 +196,17 @@
 							<span class="buttonText">실험용 버튼2</span>	
 						</button>
 					</div>
+					<div>
+					id : <span id="id"></span><br/>
+					name : <span id="name"></span><br/>
+					email : <span id="email"></span><br/>
+					image_url : <br/>
+					<img id="image_url" src="#"/>
+					</div>
+					
+					<script>
+					startApp();
+					</script>
 
 					<div id="status"></div>
 				</div>
