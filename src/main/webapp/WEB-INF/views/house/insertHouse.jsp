@@ -59,7 +59,7 @@ $(".fileDrop").on("drop", function(event){
 });
 
 
-$("#registerForm").submit(function(event){
+$("#insertForm").submit(function(event){
 	event.preventDefault();
 	
 	var that = $(this);
@@ -100,7 +100,7 @@ width: 180px;}
 <body>
 <div class="main_content">
 <h2>맛집 등록</h2>
-<form action="houseList" method="post" name="frm">
+<form action="houseList" method="post" name="frm" role="form" id="insertForm">
 	<table class="" style="width : 750px">
 	<tr>
 		<th> 맛집이름 </th>
