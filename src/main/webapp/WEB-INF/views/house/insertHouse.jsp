@@ -104,31 +104,31 @@ width: 180px;}
 <form action="houseList" method="post" name="frm" role="form" id="insertForm">
 	<table class="" style="width : 750px">
 	<tr>
-		<th> 맛집이름 </th>
+		<th style="background-color : #BCE55C; "> 맛집이름 </th>
 		<td><input type ="text" name="hnm" size="20" ></td>
 	</tr>
 	<tr>
-		<th> 전화번호 </th>
+		<th style="background-color : #BCE55C; "> 전화번호 </th>
 		<td><input type ="text" name="hphone" size="20"></td>
 	</tr>
 	<tr>
-		<th> 주소1 </th>
-		<td><input type ="text" name="haddr" readonly></td>
+		<th style="background-color : #BCE55C; "> 주소1 </th>
+		<td><input type ="text" name="haddr" readonly><input type ="button" value="주소검색"></td>
 	</tr>
 	<tr>
-		<th> 주소2 </th>
+		<th style="background-color : #BCE55C; "> 주소2 </th>
 		<td><input type ="text" name="haddr" ></td>
 	</tr>
 	<tr>
-		<th> 테마정보 </th>
+		<th style="background-color : #BCE55C; "> 테마정보 </th>
 		<td><input type ="text" name="hkind" size="20"></td>
 	</tr>
 	<tr>
-		<th> 영업시간 </th>
+		<th style="background-color : #BCE55C; "> 영업시간 </th>
 		<td><input type ="text" name="htime" size="20"></td>
 	</tr>
 	<tr>
-		<th> 휴무 </th>
+		<th style="background-color : #BCE55C; "> 휴무 </th>
 		<td><input type ="text" name="hholiday" size="20"></td>
 	</tr>
 	<div class="form-group">
