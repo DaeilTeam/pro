@@ -1,6 +1,10 @@
-<form role="form" method="post">
+<form role="form" action="modifyPage" method="post">
 	
 	<input type="hidden" name="bno" value="${boardDto.bno }">
+	<input type="hidden" name="page" value="${cri.page }">
+	<input type="hidden" name="perPageNum" value="${cri.perPageNum }">
+	<input type="hidden" name="searchType" value="${cri.searchType }">
+	<input type="hidden" name="keyword" value="${cri.keyword }">
 	
 </form>
 
@@ -31,18 +35,20 @@ $(document).ready(function(){
 	console.log(formObj);
 	
 	$(".btn-modify").on("click", function(){
-		formObj.attr("action", "/board/modify");
+		formObj.attr("action", "/board/modifyPage");
 		formObj.attr("method", "get");
 		formObj.submit();
 	});
 	
 	$(".btn-remove").on("click", function(){
-		formObj.attr("action", "/board/remove");
+		formObj.attr("action", "/board/removePage");
 		formObj.submit();
 	});
 	
 	$(".btn-list").on("click", function(){
-		self.location = "/board/listAll";
+		formObj.attr("method", "get");
+		formObj.attr("action", "/board/list");
+		formObj.submit();
 	});
 	
 });

@@ -1,4 +1,7 @@
-<form role="from" method="post">
+<form role="from" action="modifyPage" method="post">
+
+	<input type="hidden" name="page" value="${cri.page }">
+	<input type="hidden" name="perPageNum" value="${cri.perPageNum }">
 
 	<div>
 		<div>
@@ -32,7 +35,7 @@ $(document).ready(function(){
 	});
 	
 	$(".btn-cancel").on("click", function(){
-		self.location = "/board/listAll";
+		self.location = "/board/listPage?page=${cri.page}&perPageNum=${cri.perPageNum}";
 	});
 });
 </script>
