@@ -10,4 +10,6 @@ public interface HouseDao {
 	public String getTime();
 	
 	public void insertHouse(HouseDto dto);
+	
+	public void addAttach(String fullName)throws Exception;
 }

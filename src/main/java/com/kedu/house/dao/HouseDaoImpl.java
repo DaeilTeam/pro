@@ -31,4 +31,10 @@ public class HouseDaoImpl implements HouseDao{
 	public void insertHouse(HouseDto dto){
 		session.insert(namespace+".insertHouse",dto);
 	}
+	
+	@Override
+	public void addAttach(String fullName) throws Exception{
+		
+		session.insert(namespace+".addAttach", fullName);
+	}
 }

@@ -21,6 +21,11 @@ insert into house (hno, hnm, hcontent, hkind, hphone, hmenu, hdetail, himg, hspe
 (#{hno}, #{hnm}, #{hcontent}, #{hkind}, #{hphone}, #{hmenu}, #{hdetail}, #{himg}, #{hspecial}, #{haddr}, #{hlevel}, #{hvisit}, 
 					#{htime}, #{hholiday}, #{zipbunho}, #{hwriterdt}, #{hlocation}, #{hmapx}, #{hmapy})
 </insert>
+
+<insert id="addAttach">
+	insert into house_attach(fullname, hno) values(#{fullName}, LAST_INSERT_ID())
+</insert>
+
 </mapper>
 
     
