@@ -85,4 +85,23 @@ public class BoardSearchBoardController {
 		
 		return "redirect:/board/list";
 	}
+	
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	public void registGET() throws Exception {
+		
+		logger.info("register get............");
+	}
+	
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	public String registPOST(BoardDto board, RedirectAttributes rttr) throws Exception {
+		
+		logger.info("regist post............");
+		logger.info(board.toString());
+		
+		service.regist(board);
+		
+		rttr.addFlashAttribute("msg", "SUCCESS");
+		
+		return "redirect:/board/list";
+	}
 }
