@@ -17,11 +17,11 @@
 #inputform input,
 #inputform textarea
 {
-  padding: 10px 15px;
+  padding: 5px 8px;
   background: #DAD9FF;
   color: #484848;
   border: 1px solid #ccc;
-  font-size: 13px;
+  font-size: 18px;
   font-family: Helvetica, Arial;
   line-height: 1.5em;
   overflow: auto;
@@ -78,22 +78,32 @@
 {
   margin-top: 7px;
 }
-#inputform label
-{
-  display: block;
-}
-#inputform p,
+#inputform p
 {
   margin-bottom: 20px;
 }
-#inputform #error,
+#inputform #error
 {
   margin-left: 10px;
 }
-#inputform #sent-form-msg,
+#inputform #sent-form-msg
 {
   padding: 5px 10px;
   margin-bottom: 40px;
   background: rgba(0, 0, 0, 0.1);
   color: #444;
+}
+
+#inputform .selectbox{
+	
+	width: 200px; /* 원하는 너비설정 */
+	padding: .4em .4em; /* 여백으로 높이 설정 */
+	font-family: inherit;  /* 폰트 상속 */
+	font-size: 18px;
+	background: #DAD9FF url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg) no-repeat 100% 50%; /* 네이티브 화살표 대체 */  
+	border: 1px solid #ccc; 
+	border-radius: 0px; /* iOS 둥근모서리 제거 */
+	-webkit-appearance: none; /* 네이티브 외형 감추기 */
+	-moz-appearance: none;
+	appearance: none;
 }

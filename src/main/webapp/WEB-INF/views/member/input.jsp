@@ -12,73 +12,75 @@
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link rel="stylesheet" media="all" href="/css/style.css"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->		
-				
-		<!-- JS -->
-		<script src="/js/jquery-1.7.1.min.js"></script>
-		<script src="/js/custom.js"></script>
-		<script src="/js/tabs.js"></script>
-		<script src="/js/css3-mediaqueries.js"></script>
-		<script src="/js/jquery.columnizer.min.js"></script>
 		
-		<!-- Isotope -->
-		<script src="/js/jquery.isotope.min.js"></script>
-		
-		<!-- Tweet -->
-		<link rel="stylesheet" href="/css/jquery.tweet.css" media="all"  /> 
-		<script src="/js/tweet/jquery.tweet.js" ></script> 
-		<!-- ENDS Tweet -->
-		
-		<!-- superfish -->
-		<link rel="stylesheet" media="screen" href="/css/superfish.css" /> 
-		<script  src="/js/superfish-1.4.8/js/hoverIntent.js"></script>
-		<script  src="/js/superfish-1.4.8/js/superfish.js"></script>
-		<script  src="/js/superfish-1.4.8/js/supersubs.js"></script>
-		<!-- ENDS superfish -->
-		
-		<!-- prettyPhoto -->
-		<script  src="/js/prettyPhoto/js/jquery.prettyPhoto.js"></script>
-		<link rel="stylesheet" href="/js/prettyPhoto/css/prettyPhoto.css"  media="screen" />
-		<!-- ENDS prettyPhoto -->
-		
-		<!-- poshytip -->
-		<link rel="stylesheet" href="/js/poshytip-1.1/src/tip-twitter/tip-twitter.css"  />
-		<link rel="stylesheet" href="/js/poshytip-1.1/src/tip-yellowsimple/tip-yellowsimple.css"  />
-		<script  src="/js/poshytip-1.1/src/jquery.poshytip.min.js"></script>
-		<!-- ENDS poshytip -->
-		
-		<!-- JCarousel -->
-		<script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
-		<link rel="stylesheet" media="screen" href="/css/carousel.css" /> 
-		<!-- ENDS JCarousel -->
-		
-		<!-- GOOGLE FONTS -->
-		<link href='http://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'>
-
-		<!-- modernizr -->
-		<script src="/js/modernizr.js"></script>
-		
-		<!-- SKIN -->
-		<link rel="stylesheet" media="all" href="/css/skin.css"/>
-		
-		<!-- Less framework -->
-		<link rel="stylesheet" media="all" href="/css/lessframework.css"/>
-		
-		<!-- jplayer -->
-		<link href="/css/player-skin/jplayer-black-and-yellow.css" rel="stylesheet" type="text/css" />
-		<script type="text/javascript" src="/js/jquery.jplayer.min.js"></script>
-		
-		<!-- flexslider -->
-		<link rel="stylesheet" href="/css/flexslider.css" >
-		<script src="/js/jquery.flexslider.js"></script>
-		
-		<!-- reply move form -->
-		<script src="/js/moveform.js"></script>
 		
 		<!-- 회원가입 from 장식용 -->
 		<link rel="stylesheet" href="/css/forminput.css"/>
+		
+		<script src="http://connect.facebook.net/ko_KR/all.js"></script>
+		<script>
+		function statusChangeCallback(response) {
+			console.log('statusChangeCallback');
+			console.log(response);
+			
+			alert(response.status);		
+			
+			if (response.status === 'connected') {
+				FB.api('/me', function(response){
+					alert("페이스북에 로그인 중이십니다.");
+					alert(response.name + '님. 방문을 환영합니다!');
+				});
+			} else if (response.status === 'not_authorized') {
+			} else {
+			}
+		}
+
+		//로그인 여부 체크
+		function checkLoginState() {
+			FB.getLoginStatus(function(response) {
+				statusChangeCallback(response);
+			});
+		}
+
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId : '{1066099180183227}',
+				cookie : true,
+				xfbml : true,
+				version : 'v2.8'
+			});
+
+//			초기화 스크립트.
+			FB.getLoginStatus(function(response) {
+				statusChangeCallback(response);
+			});
+
+		};
+
+		//익명 즉시실행 함수, 함수를 정의함과 동시에 실행. 이후 다시 실행되지 않음.
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id))
+				return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8&appId=1066099180183227";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+
+		function testAPI() {
+			console.log('Welcome!  Fetching your information.... ');
+			FB.api(
+				'/me',
+				function(response) {
+					console.log('Successful login for: '+ response.name);
+					document.getElementById('status').innerHTML 
+						= 'Thanks for logging in, '	+ response.name + '!';
+				});
+
+		}
+		
+		</script>
 		
 		<style type="text/css">
 			.phonetext{
@@ -88,6 +90,10 @@
 				font-weight:bold;
 				font-size: 20px;
 			}
+			
+			.addrinput{
+				width: 700px;
+			}
 		</style>
 		
 		
@@ -96,8 +102,6 @@
 	
 	<body class="page">
 	
-		
-		
 		<jsp:include page="../include/header.jsp"/>
 		
 		<!-- MAIN -->
@@ -120,60 +124,66 @@
 					<div class="clearfix"><p></p></div>
 					<form action="single.html" method="post" id="inputform">
 					<div class="last">
-						<h5>아이디</h5>
+						<h4>아이디</h4>
 						<input type="text" id="mid" name="mid" maxlength="10">
 						<p></p>
 					</div>
 					<div class="last">
-						<h5>비밀번호</h5>
+						<h4>비밀번호</h4>
 						<input type="password" id="mpw" name="mpw" maxlength="20">
 						<p></p>
 					</div>
 					<div class="last">
-						<h5>비밀번호 확인</h5>
+						<h4>비밀번호 확인</h4>
 						<input type="password" id="rempw" name="rempw" maxlength="20">
 						<p></p>
 					</div>
 					<div class="last">
-						<h5>성명</h5>
-						<input type="password" id="mnm" name="mnm" maxlength="5">
+						<h4>성명</h4>
+						<input type="text" id="mnm" name="mnm" maxlength="5">
 						<p></p>
 					</div>
 					<div>
-						<h5>성별</h5>
-						남<input type="radio" size="100px" id="mgender" name="mgender">&nbsp;
-						여<input type="radio" id="mgender" name="mgender">
+						<h4>성별</h4>
+						<p></p>
+						<label for="mmgender" class="bigfont">남</label><input type="radio" id="mmgender" name="mgender">&nbsp;
+						<label for="mwgender" class="bigfont">여</label><input type="radio" id="mwgender" name="mgender">
+						<p></p>
 						<p></p>
 					</div>
 					<div>
-						<h5>핸드폰 번호</h5>
-						<input type="text" id="fmphone" name="fmphone" class="phonetext"> <span class="bigfont">─</span> 
-						<input type="text" id="smphone" name="smphone" class="phonetext"> <span class="bigfont">─</span> 
-						<input type="text" id="tmphone" name="tmphone" class="phonetext">
+						<h4>핸드폰 번호</h4>
+						<input type="text" id="fmphone" name="fmphone" class="phonetext" maxlength="3"> <span class="bigfont">─</span> 
+						<input type="text" id="smphone" name="smphone" class="phonetext" maxlength="4"> <span class="bigfont">─</span> 
+						<input type="text" id="tmphone" name="tmphone" class="phonetext" maxlength="4">
+						<p></p>
 					</div>
 					<div>
-						<h5>우편번호</h5>
+						<h4>우편번호</h4>
 						<input type="text" id="maddrcd" name="maddrcd" readonly="readonly">
 						<p></p>
 					</div>
 					<div>
-						<h5>주소 &nbsp; <input type="button" id="addrbtn" value="주소찾기"></h5>
-						<input type="text" id="maddr" name="maddr" readonly="readonly">
+						<h4>주소 &nbsp; <input type="button" id="addrbtn" value="주소찾기"></h4>
+						<input type="text" id="maddr" name="maddr" class="addrinput" readonly="readonly">
+						<h4>상세주소</h4>
+						<input type="text" id="maddr" name="maddr" class="addrinput" readonly="readonly">
 						<p></p>
 					</div>
 					<div>
-						<h5>이메일</h5>
-						<input type="text" id="firstmemail" name="firstmemail">
-						<select id="secondmemail" name="secondmemail">
+						<h4>이메일</h4>
+						<input type="text" id="firstmemail" name="firstmemail"><span class="bigfont"> @ </span>
+						<select id="secondmemail" name="secondmemail" class="selectbox">
 							<option value="@gmail.com">gmail.com</option>							
 							<option value="@naver.com">naver.com</option>							
-							<option value="@nate.com">naver.com</option>							
-							<option value="@daum.net">naver.com</option>							
+							<option value="@nate.com">nate.com</option>							
+							<option value="@daum.net">daum.net</option>							
 						</select>
 					</div>
 					</form>
 					<button id="subbtn" class="link-button green">&nbsp;등록&nbsp;</button>
 					<button id="cencle" class="link-button red">&nbsp;취소&nbsp;</button>
+					<button class="a">&nbsp;버튼&nbsp;</button>
 	        		
 	        		
 										
