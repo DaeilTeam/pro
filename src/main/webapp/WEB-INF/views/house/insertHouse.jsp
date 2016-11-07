@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>맛집 등록</title>
 
-
+<link rel="stylesheet" href="/css/style.css" type="text/css"/>
 <script id="template" type="text/x-handlebars-template">
 <li>
   <span class="mailbox-attachment-icon has-img"><img src="{{imgsrc}}" alt="Attachment"></span>
@@ -90,7 +90,7 @@ width: 180px;}
   width: 80%;
   height: 100px;
   border: 1px dotted gray;
-  background-color: lightslategrey;
+  background-color: #BCE55C;
   margin: auto;
   
 }
@@ -99,6 +99,7 @@ width: 180px;}
 </head>
 <body>
 <div class="main_content">
+<jsp:include page="../include/header.jsp"></jsp:include>
 <h2>맛집 등록</h2>
 <form action="houseList" method="post" name="frm" role="form" id="insertForm">
 	<table class="" style="width : 750px">
@@ -144,5 +145,6 @@ width: 180px;}
 	</table>
 </form>
 </div>
+<jsp:include page="../include/footer.jsp"></jsp:include>
 </body>
 </html>
