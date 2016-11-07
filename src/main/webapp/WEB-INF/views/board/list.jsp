@@ -3,6 +3,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ page session="false" %>
 
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<jsp:include page="../include/header.jsp"/>
+
 <table>
 	<tr>
 		<th>글번호</th>
@@ -128,3 +131,5 @@ $(document).ready(function(){
 	});
 });
 </script>
+
+<jsp:include page="../include/footer.jsp"/>
