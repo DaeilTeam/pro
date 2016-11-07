@@ -19,8 +19,14 @@
 	<delete id="delete">
 		delete from board where bno = #{bno}
 	</delete>
-
-
+	
+	<select id="listAll" resultType="BoardDto">
+	<![CDATA[
+		select bno, btitle, bcontent, bwritedt, bcount, bwriter from board
+		where bno > 0 order by bno desc, bwritedt desc
+	]]>
+	</select>
+	
 	<select id="listPage" resultType="BoardDto">
 	<![CDATA[
 		select bno, btitle, bcontent, bwritedt, bcount, bwriter from board

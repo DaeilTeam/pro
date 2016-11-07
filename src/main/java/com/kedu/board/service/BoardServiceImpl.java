@@ -38,6 +38,11 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 	@Override
+	public List<BoardDto> listAll() throws Exception {
+		return dao.listAll();
+	}
+	
+	@Override
 	public List<BoardDto> listCriteria(BoardCriteria cri) throws Exception {
 		return dao.listCriteria(cri);
 	}

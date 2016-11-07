@@ -40,6 +40,11 @@ public class BoardDaoImpl implements BoardDao {
 	}
 	
 	@Override
+	public List<BoardDto> listAll() throws Exception {
+		return session.selectList(namespace + ".listAll");
+	}
+	
+	@Override
 	public List<BoardDto> listPage(int page) throws Exception {
 
 		if(page <= 0) {
