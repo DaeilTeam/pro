@@ -67,18 +67,18 @@
 							<th style="width: 40px">조회</th>
 						</tr>
 
-						<c:forEach items="${list}" var="boardDto">
+						<c:forEach items="${list}" var="houseDto">
 
 							<tr>
-								<td>${boardDto.bno}</td>
+								<td>${houseDto.hno}</td>
 								<td><a
-									href='/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page) }&bno=${boardDto.bno}'>
-										${boardDto.title} <strong>[ ${boardDto.replycnt }]</strong> 
+									href='/house/readPage${pageMaker.makeSearch(pageMaker.cri.page) }&hno=${houseDto.hno}'>
+										${houseDto.title} <strong>[ ${houseDto.replycnt }]</strong> 
 										</a></td>
-								<td>${boardDto.writer}</td>
+								<td>${houseDto.writer}</td>
 								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
-										value="${boardDto.regdate}" /></td>
-								<td><span class="badge bg-red">${boardDto.viewcnt }</span></td>
+										value="${houseDto.regdate}" /></td>
+								<td><span class="badge bg-red">${houseDto.viewcnt }</span></td>
 							</tr>
 
 						</c:forEach>
