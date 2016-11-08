@@ -75,15 +75,10 @@
 						<td><input type ="text" name="hholiday" size="20"></td>
 					</tr>
 	
-					<tr>
-						<td colspan="2" align="center">
-						<input type="submit" value="등록" onclick="return houseList()">
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="button" value="취소">
-						</td>
-					</tr>
 				</table>
+			<button type="submit" class="btn btn-primary">등록</button>
 			</div>
+			
 		</form>
 	</div>
 			<!-- /.box -->
