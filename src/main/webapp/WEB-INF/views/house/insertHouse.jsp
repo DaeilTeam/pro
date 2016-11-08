@@ -5,7 +5,7 @@
 
 <style>
 .fileDrop {
-  width: 80%;
+  width: 50%;
   height: 100px;
   border: 1px dotted gray;
   background-color: #B8B8B8;
@@ -22,14 +22,14 @@
 			<!-- general form elements -->
 			<div class="box box-primary">
 				<div class="box-header">
-					<h2 class="box-title">맛집 등록</h2>
+					<h2 class="box-title" style=" text-align : left" >맛집 등록</h2>
 				</div>
 				<!-- /.box-header -->
 
 				<form role="form" method="post" name="frm" id="insertForm">
 					<div class="box-body">
-						<div class="form-group">
-							<label for="exampleInputEmail1">맛집 사진 등록</label>
+						<div class="form-group" style=" text-align : center">
+							<label for="exampleInputEmail1">맛집 사진 등록(사진 파일을 드래그 해서 올려주세요.)</label>
 							<div class="fileDrop"></div>
 						</div>
 					</div>
