@@ -6,10 +6,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.kedu.house.dto.PageMaker;
+import com.kedu.house.dto.SearchCriteria;
 import com.kedu.house.dto.HouseDto;
 import com.kedu.house.service.HouseService;
 
@@ -47,6 +50,21 @@ public class HouseController {
 	    return "redirect:/house/houseList";
 	  }
 	
+	  @RequestMapping(value = "/list", method = RequestMethod.GET)
+	  public void listPage(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+
+	    logger.info(cri.toString());
+
+	    model.addAttribute("list", service.listSearchCriteria(cri));
+
+	    PageMaker pageMaker = new PageMaker();
+	    pageMaker.setCri(cri);
+
+	    pageMaker.setTotalCount(service.listSearchCount(cri));
+
+	    model.addAttribute("pageMaker", pageMaker);
+	  }
+	  
 	/*
 	@RequestMapping(value="/houseList",method=RequestMethod.GET)
 	public void houseList(@RequestParam(required=false)String keyword,Model model) throws Exception{

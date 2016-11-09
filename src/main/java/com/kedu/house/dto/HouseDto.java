@@ -1,5 +1,6 @@
 package com.kedu.house.dto;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class HouseDto {
@@ -19,9 +20,11 @@ public class HouseDto {
 	private String hholiday;
 	private String zipbunho;
 	private Date hwriterdt;
+	private Date hregdate;
 	private String hlocation;
 	private int hmapx;
 	private int hmapy;
+	private String[] files;
 	
 	public String getHaddr() {
 		return haddr;
@@ -143,14 +146,29 @@ public class HouseDto {
 	public void setHlocation(String hlocation) {
 		this.hlocation = hlocation;
 	}
+	
+	public Date getHregdate() {
+		return hregdate;
+	}
+	public void setHregdate(Date hregdate) {
+		this.hregdate = hregdate;
+	}
+	public String[] getFiles() {
+		return files;
+	}
+	public void setFiles(String[] files) {
+		this.files = files;
+	}
 	@Override
 	public String toString() {
 		return "HouseDto [hno=" + hno + ", hnm=" + hnm + ", hcontent=" + hcontent + ", hkind=" + hkind + ", hphone="
 				+ hphone + ", hmenu=" + hmenu + ", hdetail=" + hdetail + ", himg=" + himg + ", hspecial=" + hspecial
 				+ ", haddr=" + haddr + ", hlevel=" + hlevel + ", hvisit=" + hvisit + ", htime=" + htime + ", hholiday="
-				+ hholiday + ", zipbunho=" + zipbunho + ", hwriterdt=" + hwriterdt + ", hlocation=" + hlocation
-				+ ", hmapx=" + hmapx + ", hmapy=" + hmapy + "]";
+				+ hholiday + ", zipbunho=" + zipbunho + ", hwriterdt=" + hwriterdt + ", hregdate=" + hregdate
+				+ ", hlocation=" + hlocation + ", hmapx=" + hmapx + ", hmapy=" + hmapy + ", files="
+				+ Arrays.toString(files) + "]";
 	}
+		
 	
 	
 	

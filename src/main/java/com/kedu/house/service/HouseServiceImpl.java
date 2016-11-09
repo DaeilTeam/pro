@@ -13,12 +13,15 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
-import com.kedu.house.dao.HouseDao;
+import com.kedu.house.dto.SearchCriteria;
 import com.kedu.house.dto.HouseDto;
+import com.kedu.house.dto.Criteria;
+import com.kedu.house.dao.HouseDao;
 
 @Service
 public class HouseServiceImpl implements HouseService{
@@ -32,10 +35,58 @@ public class HouseServiceImpl implements HouseService{
 		return dao.listAll();
 	}
 	
+//	@Override
+//	public void insertHouse(HouseDto house) throws Exception {
+//		dao.insertHouse(house);
+//	}
+	
+	@Transactional
 	@Override
-	public void insertHouse(HouseDto house) throws Exception {
+	public void insertHouse(HouseDto house) throws Exception{
+		
 		dao.insertHouse(house);
+		
+		String[] files = house.getFiles();
+		
+		if(files == null) { return; }
+		
+		for(String fileName : files) {
+			dao.addAttach(fileName);
+		}
 	}
+	
+	@Override
+	  public List<HouseDto> listCriteria(Criteria cri) throws Exception {
+
+	    return dao.listCriteria(cri);
+	  }
+
+	  @Override
+	  public int listCountCriteria(Criteria cri) throws Exception {
+
+	    return dao.countPaging(cri);
+	  }
+
+	  @Override
+	  public List<HouseDto> listSearchCriteria(SearchCriteria cri) throws Exception {
+
+	    return dao.listSearch(cri);
+	  }
+
+	  @Override
+	  public int listSearchCount(SearchCriteria cri) throws Exception {
+
+	    return dao.listSearchCount(cri);
+	  }
+	  
+
+	  @Override
+	  public List<String> getAttach(Integer hno) throws Exception {
+	    
+	    return dao.getAttach(hno);
+	  }   
+
+	
 /*
 	@Override
 	public List<HouseDto> searchHouse(String keyword, int display, int start) throws Exception {
